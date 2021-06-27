@@ -46,7 +46,7 @@ public class RemovePanel extends JPanel {
 
                 int validation = JOptionPane.showConfirmDialog(null, "Êtes-vous sûr de vouloir supprimer la/les catastrophe(s) sélectionnée(s) ?", "Validation", JOptionPane.YES_NO_OPTION);
 
-                if (validation == 0) {
+                if (validation == 0) { //JOptionPane.YES_OPTION
                     controler.deleteDisasters(disasters);
 
                     remove(listingPanel);

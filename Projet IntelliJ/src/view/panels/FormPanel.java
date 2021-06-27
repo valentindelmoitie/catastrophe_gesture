@@ -38,7 +38,7 @@ public class FormPanel extends JPanel {
     private JList regions, chosenRegions;
 
     public FormPanel(Type formType) {
-        this.formType = formType;
+        this.formType = formType; // On définit un formType pour différencier le formulaire d'ajout et de modification
 
         this.setLayout(new BorderLayout());
 
@@ -52,7 +52,7 @@ public class FormPanel extends JPanel {
         dateFormat.setLenient(false);
     }
 
-    public FormPanel(Disaster disasterToModify) {
+    public FormPanel(Disaster disasterToModify) {   // Cette méthode fait les appels neccesaires pour afficher le formulaire de moficiation avec les les champs pré-remplis
         this(Type.MODIFICATION);
         this.disasterToModify = disasterToModify;
         fillForm();
@@ -357,7 +357,7 @@ public class FormPanel extends JPanel {
             else {
                 errorMessage.append("Vous n'avez pas remplis tous les champs obligatoires. Voici ceux que vous n'avez pas remplis ; ");
 
-                for (String string : errorFields)
+                for (String string : errorFields)  // Fonctionne, on travaille sur l'arrayList et on l'ajoute au StringBuilder
                     errorMessage.append(string + " ");
 
                 throw new FormException(errorMessage.toString());
@@ -396,5 +396,5 @@ public class FormPanel extends JPanel {
             chosenRegions.setListData(selectedRegions.toArray());
             FormPanel.this.repaint();
         }
-    }
+    }   // Bouton selectionner region dans le formulaire
 }

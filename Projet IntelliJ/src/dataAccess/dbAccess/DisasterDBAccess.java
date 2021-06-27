@@ -97,7 +97,7 @@ public class DisasterDBAccess implements DisasterDataAccess {
             preparedStatement.setBoolean(7, disaster.getNatural());
             int nbInsert = preparedStatement.executeUpdate();
 
-            String getIdSt = "select id from disaster where description = ?";
+            String getIdSt = "select id from disaster where description = ?";                 // On n'a plus l'ID vu qu'on utilise AUTO_INCREMENT
             PreparedStatement getIdStatement = connection.prepareStatement(getIdSt);
 
             getIdStatement.setString(1, disaster.getDescription());
