@@ -92,7 +92,7 @@ public class Search2Panel extends JPanel {
     private class SearchButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            int selectedId = Integer.parseInt(choiceCB.getSelectedItem().toString().split(" ")[0]); // [0] pour choisir le première elem (version raccourcie de la search 3)
+            int selectedId = Integer.parseInt(choiceCB.getSelectedItem().toString().split(" ")[0]);
 
             try {
                 ArrayList<Region> regions = controler.getRegionsImpactedBy(selectedId);
